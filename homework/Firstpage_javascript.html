@@ -1,0 +1,51 @@
+fdjbgnhjk,l.l
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8"/>
+    <title>Homework #2</title>
+</head>
+<body>
+<div id="div1">Hello JS</div>
+
+<script>
+    //add pe fereastra eventul load si adaugam o functie care sa se execute cand eventul e propagat
+
+    //alta varianta e cu: (function(ceva) {body}) ();
+
+    window.addEventListener('load', onPageLoad);
+
+    function onPageLoad() {
+        console.info('page loaded');
+        var div1 = document.getElementById('div1');
+        setTimeout(function () {
+            div1.style.backgroundColor = 'green';
+        }, 2000);
+        div1.addEventListener('click', function (e) {
+            //div1.innerHTML = 'Hello user';
+            //sau
+            //var p1 = document.createelement('div1')
+            //p1.innerHTML = 'div adaugat dinamic';
+            //div1.appendChild(p1);
+
+            var p1 = document.createTextNode('Paragraph 1');
+            div1.appendChild(p1);
+        });
+
+        div1.addEventListener('mouseenter', function (e) {
+            div1.style.cursor = 'pointer';
+            div1.style.backgroundColor = 'blue';
+            div1.style.opacity = 0.5;
+        });
+
+        div1.addEventListener('mouseleave', function (e) {
+            div1.style.cursor = 'auto';
+            div1.style.backgroundColor = 'green';
+            div1.style.opacity = 1;
+        });
+
+    };
+
+</script>
+</body>
+</html>
